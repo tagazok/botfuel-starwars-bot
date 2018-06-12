@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    html,
+    body {
+      width: 800px;
+      height: 600px;
+      margin: 0;
+      font-family: "Arial Black", sans-serif;
+      background-color: #12240a;
+    }
+
+    .intro {
+      width: 800px;
+      height: 600px;
+      position: relative;
+    }
+
+    .sides {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .sides.header {
+      height: 450px;
+      position: relative;
+    }
+
+    .sides.footer {
+      height: 150px;
+      border-top: solid 1px rgba(195, 249, 145, .2);
+    }
+
+    .side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      position: relative;
+    }
+
+    .footer .side {
+      justify-content: center;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    .left {
+      background-color: #dcc9a1;
+      background-image: url({{ character1_photo }});
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, .7);
+    }
+
+    .right {
+      background-color: #1b636f;
+      background-image: url({{ character2_photo }});
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      flex-direction: column-reverse;
+    }
+
+    .name {
+      margin: 0.3em;
+      z-index: 1;
+      color: rgb(195, 249, 145);
+      font-size: 3em;
+      text-shadow: 1px 1px 21px rgb(195, 249, 145);
+    }
+
+    .photo {
+      max-width: 80%;
+    }
+
+    .movies {
+      font-size: 1.5em;
+    }
+
+    .movies {
+      z-index: 1;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      color: #fff;
+    }
+    .movies .number {
+      font-size: 3em;
+    }
+
+    .versus {
+      position: absolute;
+      width: 8vw;
+      height: 8vw;
+      background: #ffffff;
+      border-radius: 50%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.4vw;
+      color: #123456;
+      border-width: 10px;
+      border-style: solid;
+      border-color: rgb(135, 220, 90);
+      box-shadow: 0px 0px 10px 2px rgb(195, 249, 145);
+      border-color: rgba(255, 0, 0, 1);
+      box-shadow: 0px 0px 100px 25px rgb(255, 0, 0);
+      transform: rotate(-45deg);
+    }
+
+    .versus span {
+      transform: rotate(35deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="intro">
+    <div class="sides header">
+      <div class="side left">
+        <div class="overlay"></div>
+        <h2 class="name">{{ character1_name }}</h2>
+      </div>
+      <div class="versus">
+        <span>vs</span>
+      </div>
+      <div class="side right">
+        <div class="overlay"></div>
+        <h2 class="name">{{ character2_name }}</h2>
+      </div>
+    </div>
+
+    <div class="sides footer">
+      <div class="side">
+        <div class="overlay"></div>
+        <div class="movies">
+          <h2 class="number">{{ character1_movies }}</h2>
+          <div>movies</div>
+        </div>
+      </div>
+      <div class="side">
+        <div class="overlay"></div>
+        <div class="movies">
+          <h2 class="number">{{ character2_movies }}</h2>
+          <div>movies</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
