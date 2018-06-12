@@ -1,7 +1,5 @@
 const { View, BotImageMessage, WebAdapter } = require('botfuel-dialog');
 
-const BOT_URL = process.env.BOT_URL || `http://localhost:${PORT}`;
-
 class VersusView extends View {
   render(userMessage, { matchedEntities, missingEntities, requestResult }) {
     const messages = [];
