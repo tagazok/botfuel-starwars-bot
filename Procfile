@@ -1,1 +1,1 @@
-web: npm run start botfuel-config
+web: yarn run start botfuel-config.js
